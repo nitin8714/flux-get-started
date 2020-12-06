@@ -1,0 +1,14 @@
+# podinfo.yaml
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: jenkins
+  namespace: jenkins
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  chart:
+    git: ssh://git@github.com:nitin8714/flux-get-started
+    ref: main
+    path: charts/jenkins
